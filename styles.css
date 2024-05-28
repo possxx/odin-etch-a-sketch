@@ -7,7 +7,16 @@
 }
 
 #eas-container {
-    width: 60%;
-    min-width: 372px;
-    max-width: 864px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eas-row {
+    display: flex;
+}
+
+.eas-item {
+    border: 1px solid black;
 }
