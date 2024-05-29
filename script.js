@@ -9,13 +9,23 @@ function createSketch(dimension) {
             const etchASketchItem = document.createElement("div");
             etchASketchItem.classList.add("eas-item");
             etchASketchRow.appendChild(etchASketchItem);
-        };
-    };
+        }
+    }
     const etchASketchItems = document.querySelectorAll(".eas-item");
     etchASketchItems.forEach((item) => {
         item.style.width = `${etchASketchContainer.offsetWidth / dimension}px`;
         item.style.height = `${etchASketchContainer.offsetWidth / dimension}px`;
-    });
-};
+    })
+}
 
-createSketch(3)
+function generateColor() {
+    const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+    let code = "";
+    for (let i = 0; i < 6; i++) {
+        code += hexArray[Math.floor(Math.random() * 16)];
+    }
+    return code;
+}
+
+createSketch(10);
+console.log( generateColor() );
