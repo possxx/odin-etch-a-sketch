@@ -30,16 +30,10 @@ function generateColor() {
 }
 
 function changeColor() {
-    let count = 0;
     const itemColors = document.querySelectorAll(".eas-item");
     itemColors.forEach((item) => {
         item.addEventListener("mouseenter", () => {
-            if (item.style.backgroundColor == "") {
-                item.style.backgroundColor = `rgb(${generateColor()})`;
-                count++;
-            } else if (count == 1) {
-
-            }
+            item.style.backgroundColor = `rgb(${generateColor()})`;
         })
     })
 }
