@@ -7,13 +7,30 @@
 }
 
 body {
+    font-family:'Arial Narrow', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.paragraph1 {
+    margin: 0 0 10px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
 #eas-container {
-    width: 700px;
+    width: 850px;
     display: flex;
     flex-direction: column;
     padding: 10px;
