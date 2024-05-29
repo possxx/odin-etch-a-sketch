@@ -1,4 +1,6 @@
 const etchASketchContainer = document.querySelector("#eas-container");
+createSketch(16);
+changeColor();
 
 function createSketch(dimension) {
     for (let i = 0; i < dimension; i++) {
@@ -19,21 +21,6 @@ function createSketch(dimension) {
     })
 }
 
-const inputButton = document.querySelector("#gridBtn");
-inputButton.addEventListener("click", () => {
-    const inputField = document.querySelector("#gridInt");
-    if (inputField.value < 0) {
-        etchASketchContainer.innerHTML = "";
-        createSketch(1);
-    } else if (inputField.value > 100) {
-        etchASketchContainer.innerHTML = "";
-        createSketch(100);
-    } else {
-        etchASketchContainer.innerHTML = "";
-        createSketch(inputField.value);
-    }
-})
-
 function generateColor() {
     const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
     let code = "";
@@ -43,4 +30,29 @@ function generateColor() {
     return code;
 }
 
-createSketch(16);
+function changeColor() {
+    const itemColors = document.querySelectorAll(".eas-item");
+    itemColors.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            item.style.backgroundColor = "red";
+        })
+    })
+}
+
+const inputButton = document.querySelector("#gridBtn");
+inputButton.addEventListener("click", () => {
+    const inputField = document.querySelector("#gridInt");
+    if (inputField.value < 0) {
+        etchASketchContainer.innerHTML = "";
+        createSketch(1);
+        changeColor();
+    } else if (inputField.value > 100) {
+        etchASketchContainer.innerHTML = "";
+        createSketch(100);
+        changeColor();
+    } else {
+        etchASketchContainer.innerHTML = "";
+        createSketch(inputField.value);
+        changeColor();
+    }
+})
