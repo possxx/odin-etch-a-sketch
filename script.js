@@ -19,6 +19,21 @@ function createSketch(dimension) {
     })
 }
 
+const inputButton = document.querySelector("#gridBtn");
+inputButton.addEventListener("click", () => {
+    const inputField = document.querySelector("#gridInt");
+    if (inputField.value < 0) {
+        etchASketchContainer.innerHTML = "";
+        createSketch(1);
+    } else if (inputField.value > 100) {
+        etchASketchContainer.innerHTML = "";
+        createSketch(100);
+    } else {
+        etchASketchContainer.innerHTML = "";
+        createSketch(inputField.value);
+    }
+})
+
 function generateColor() {
     const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
     let code = "";
@@ -29,4 +44,3 @@ function generateColor() {
 }
 
 createSketch(16);
-console.log( generateColor() );
