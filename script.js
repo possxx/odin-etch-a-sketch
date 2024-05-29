@@ -8,6 +8,7 @@ function createSketch(dimension) {
         for (let i =0; i < dimension; i++) {
             const etchASketchItem = document.createElement("div");
             etchASketchItem.classList.add("eas-item");
+            etchASketchItem.classList.add("prevent-select");
             etchASketchRow.appendChild(etchASketchItem);
         }
     }
@@ -27,5 +28,5 @@ function generateColor() {
     return code;
 }
 
-createSketch(10);
+createSketch(16);
 console.log( generateColor() );
