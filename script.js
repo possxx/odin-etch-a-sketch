@@ -1,6 +1,4 @@
 const etchASketchContainer = document.querySelector("#eas-container");
-createSketch(16);
-changeColor();
 
 function createSketch(dimension) {
     for (let i = 0; i < dimension; i++) {
@@ -20,6 +18,7 @@ function createSketch(dimension) {
         item.style.height = `${etchASketchContainer.offsetWidth / dimension}px`;
     })
 }
+createSketch(16);
 
 function generateColor() {
     let r = Math.floor(Math.random() * 255);
@@ -91,6 +90,7 @@ function changeColor() {
         })
     })
 }
+changeColor();
 
 const inputButton = document.querySelector("#gridBtn");
 inputButton.addEventListener("click", () => {
