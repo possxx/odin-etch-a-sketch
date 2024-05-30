@@ -5,7 +5,7 @@ function createSketch(dimension) {
         const etchASketchRow = document.createElement("div");
         etchASketchRow.classList.add("eas-row");
         etchASketchContainer.appendChild(etchASketchRow);
-        for (let i =0; i < dimension; i++) {
+        for (let i = 0; i < dimension; i++) {
             const etchASketchItem = document.createElement("div");
             etchASketchItem.classList.add("eas-item");
             etchASketchItem.classList.add("prevent-select");
